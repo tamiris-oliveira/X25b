@@ -1,0 +1,21 @@
+PROGRAMA {teste_com_erros}
+
+DECLARACOES
+INTEIRO x
+INTEIRO y
+
+ALGORITMO
+
+{ Teste 1: Variavel nao declarada }
+z := 10
+
+{ Teste 2: Tipo incompativel - usando array sem indice }
+{ Comentado para nao causar erro sintatico }
+
+{ Teste 3: Uso de variavel nao declarada em expressao }
+x := z + 5
+
+ESCREVA 'Fim do teste'
+
+FIMPROG
+

@@ -1,0 +1,26 @@
+PROGRAMA {fatorial_exemplo}
+
+DECLARACOES
+INTEIRO numero
+INTEIRO fatorial
+
+ALGORITMO
+
+{ Calcula o fatorial de um numero inteiro }
+ESCREVA 'Digite um numero para calcular o fatorial: '
+LEIA numero
+fatorial := numero
+
+SE numero .IGU. 0
+ENTAO
+    fatorial := 1
+FIMSE
+
+ENQUANTO numero .MAQ. 1 FACA
+    fatorial := fatorial * numero
+    numero := numero - 1
+FIMENQ
+
+ESCREVA 'fatorial = ', fatorial
+
+FIMPROG

@@ -1,0 +1,15 @@
+# Executável
+x25b
+
+# Arquivos objeto
+*.o
+
+# Arquivos gerados pelo Flex e Bison
+lex.yy.c
+parser.tab.c
+parser.tab.h
+parser.output
+
+# Arquivos de teste temporários
+teste_sintatico.x25b
+

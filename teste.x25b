@@ -1,0 +1,111 @@
+PROGRAMA {lista_numeros_reais}
+
+DECLARACOES
+LISTAREAL L[25]
+INTEIRO i
+INTEIRO j
+INTEIRO n
+INTEIRO repetiu
+REAL valor
+REAL soma
+REAL media
+REAL maior
+REAL menor
+
+ALGORITMO
+
+{ Programa que:
+  1. Le uma lista com 25 numeros reais distintos
+  2. Verifica e rejeita repeticao de valores
+  3. Calcula a media dos valores
+  4. Determina o maior e o menor valor
+  5. Imprime a lista de entrada e os resultados
+}
+
+{ Inicializacao }
+n := 25
+soma := 0,0
+i := 1
+
+{ Leitura da lista com verificacao de repeticao }
+ESCREVA 'Leitura de 25 numeros reais distintos'
+ESCREVA '======================================'
+
+ENQUANTO i .MEI. n FACA
+    ESCREVA 'Digite o numero ', i, ': '
+    LEIA valor
+    
+    { Verifica se o valor ja existe na lista }
+    repetiu := 0
+    j := 1
+    
+    ENQUANTO j .MEQ. i FACA
+        SE L[j] .IGU. valor
+        ENTAO
+            repetiu := 1
+            j := i
+        SENAO
+            j := j + 1
+        FIMSE
+    FIMENQ
+    
+    { Se nao repetiu, adiciona na lista }
+    SE repetiu .IGU. 0
+    ENTAO
+        L[i] := valor
+        soma := soma + valor
+        i := i + 1
+    SENAO
+        ESCREVA 'Valor repetido! Digite outro numero.'
+    FIMSE
+FIMENQ
+
+ESCREVA ''
+ESCREVA 'Lista lida com sucesso!'
+ESCREVA ''
+
+{ Calculo da media }
+media := soma / n
+
+{ Determinacao do maior e menor valor }
+maior := L[1]
+menor := L[1]
+i := 2
+
+ENQUANTO i .MEI. n FACA
+    SE L[i] .MAQ. maior
+    ENTAO
+        maior := L[i]
+    FIMSE
+    
+    SE L[i] .MEQ. menor
+    ENTAO
+        menor := L[i]
+    FIMSE
+    
+    i := i + 1
+FIMENQ
+
+{ Impressao dos resultados }
+ESCREVA ''
+ESCREVA '======================================'
+ESCREVA 'RESULTADOS'
+ESCREVA '======================================'
+ESCREVA ''
+
+ESCREVA 'Lista de valores lidos:'
+i := 1
+ENQUANTO i .MEI. n FACA
+    ESCREVA 'Posicao ', i, ': ', L[i]
+    i := i + 1
+FIMENQ
+
+ESCREVA ''
+ESCREVA '======================================'
+ESCREVA 'Soma dos valores: ', soma
+ESCREVA 'Media dos valores: ', media
+ESCREVA 'Maior valor: ', maior
+ESCREVA 'Menor valor: ', menor
+ESCREVA '======================================'
+
+FIMPROG
